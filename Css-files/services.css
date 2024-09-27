@@ -1,0 +1,216 @@
+/* * {
+    font-family: "Bree Serif", serif;
+} */
+
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.head_container {
+    overflow-x: scroll;
+}
+
+.mainhead {
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.section1 {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__title {
+    font-size: 4em;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgb(138, 37, 37), rgb(237, 116, 116), rgb(138, 37, 37));
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-animation 3s infinite;
+}
+
+.section1>hr {
+    opacity: 0;
+    border-width: 2px;
+}
+
+.section1:hover>hr {
+    border-bottom: 2px solid rgb(138, 37, 37);
+    /* Add bottom border on hover */
+    border-top: 2px solid rgb(138, 37, 37);
+    width: 50%;
+    opacity: 1;
+}
+
+#active-page {
+    color: #dc3545;
+    border-bottom: 2px solid #dc3545;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.head_container_service {
+    background-image: url(/Images/food.jpg);
+}
+.first_cont {
+    flex-wrap: wrap;
+}
+
+.items {
+    overflow: hidden;
+    max-width: 180px;
+}
+
+.items img {
+    transition: 0.3s;
+    z-index: 12;
+}
+
+.items:hover img {
+    transform: scale(1.1);
+}
+
+.but {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.but:hover {
+    background-color: rgb(138, 37, 37);
+    color: white;
+    transform: translateX(10px);
+}
+
+.testimonalsection {
+    padding-top: 20px;
+    background: linear-gradient(#0d49a3, #428cfa);
+  
+}
+
+.fa-star
+.fa-star-half-stroke {
+    color: goldenrod;
+}
+
+.testimonal__container {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonal__title {
+    color: rgb(138, 37, 37);
+}
+
+.testimonal__card {
+    position: relative;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 0;
+
+}
+
+.testimonal__image:hover {
+    transform: translateY(10px);
+}
+
+.testimonal__swiper {
+    background-color: white;
+    margin: 25px; /*sets margin of each div 25px*/
+    overflow: hidden;
+    border: 2px solid rgb(138, 37, 37);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 330px;
+
+}
+
+.testimonal__swiper>div {
+    background-color: rgb(138, 37, 37);
+    height: 33%;
+    border-radius: 5px 5px 70% 70%;
+    transition: 0.5s ease-in-out;
+}
+
+.testimonal__swiper:hover>div {
+    height: 200%;
+
+}
+
+.testimonal__swiper * {
+    transition: 0.3s ease-in-out;
+}
+
+.testimonal__swiper:hover * {
+    color: white;
+}
+
+.second_cont {
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.deals {
+    flex: 1 1 300px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.deals:hover {
+    transform: translateY(-10px);
+    background-color: rgb(138, 37, 37);
+    color: white;
+    border-color: white;
+}
+
+
+
+#butt:hover {
+    background-color: rgb(196, 89, 89);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+    background-image: linear-gradient(to top, rgb(246, 10, 10) , rgb(248, 145, 49), rgb(236, 239, 56));
+  }
+  
+  ::-webkit-scrollbar {
+    width:12px;
+  
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff0707;
+    border-radius: 10px;
+    border:.3px solid white;
+    background-image: -webkit-linear-gradient(90deg,
+        rgb(20, 21, 12) 0%,
+        rgb(0, 0, 0) 25%,
+        transparent 100%,
+        rgb(247, 4, 4) 75%,
+        transparent)
+  }
