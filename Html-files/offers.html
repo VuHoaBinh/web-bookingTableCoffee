@@ -220,39 +220,7 @@
               document.getElementById("progressBar").style.width = scrolled + "%";
           };
       </script>
-      <!-- end -->
 
-<!-- .circle {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      pointer-events: none;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.466), rgba(255, 52, 52, 0.5));
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-      box-shadow: 0 0 20px #faff64,
-        0 0 60px #f52323,
-        0 0 100px #ff0000;
-        animation: colors 1s infinite;
-  transform: translate(-50%, -50%);
-    }
-
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    @media (max-width: 724px) {
-      .circle-container{
-        display: none;
-      }
-    }
-    </style> -->
     
   </head>
 
@@ -277,73 +245,100 @@
 
     <!-- header design section -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <a href="../index.html" class="navbar-brand opacity-75 flex-fill">
-                <img src="../Images/logo/Foodielogo.png" height="40" />
-            </a>
-            <button class="navbar-toggler order-1" type="button" data-bs-toggle="collapse" data-bs-target=".hamburgeritems" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0">
-                <ul class="navbar-nav center-links">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i> Home</a
+      <div class="container-fluid">
+        <!-- Brand Logo -->
+        <a href="index.html">
+          <img
+            id="theme-toggle-logo"
+            style="height: 90px; width: 100px"
+            src="Images/logo/Logo-Light.png"
+            alt="Brand Logo"
+          />
+        </a>
+
+        <!-- Centered Navbar Links -->
+        <div
+          style="margin-left: 25vw"
+          class="collapse navbar-collapse hamburgeritems centerdiv order-2 order-lg-0"
+        >
+          <ul class="navbar-nav center-links">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html"
+                style="color: black"
               >
+                <i class="fa-solid fa-house"></i> Home
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../Html-files/menu.html"><i class="fa-solid fa-bars"></i> Menu</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link services" href="../Html-files/services.html" aria-expanded="false"><i class="fa-solid fa-gear"></i> Services</a
+              <a
+                class="nav-link"
+                href="Html-files/menu.html"
+                style="color: black"
               >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Ordering options</a></li>
-                    <li><a class="dropdown-item" href="#">Order Tracking</a></li>
-                    <li><a class="dropdown-item" href="#">Customer Support</a></li>
-                    <li><a class="dropdown-item" href="#">FAQS</a></li>
-                </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../Html-files/contact.html"><i class="fa-solid fa-phone"></i> Contact Us</a
+                <i class="fa-solid fa-table"></i> Tables
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="Html-files/offers.html"
+                style="color: black"
               >
+                <i class="fa-solid fa-ticket"></i> Vouchers
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../Html-files/offers.html"
-                ><i class="fa-solid fa-tag"></i> Offers</a
+              <a
+                class="nav-link"
+                href="Html-files/contact.html"
+                style="color: black"
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="RateUs.html">
-                  <i class="fa-solid fa-star"></i> Rate Us
+                <i class="fa-solid fa-phone"></i> Contact Us
               </a>
             </li>
           </ul>
         </div>
-        <div class="order-0 ml-auto p-2">
-          <img
-            class="nav-link"
-            src="../Images/navbar/sun2.png"
-            id="theme-toggle-icon"
-            alt="theme toggler button"
-          />
-        </div>
-        <div class="collapse navbar-collapse hamburgeritems enddiv order-3">
+
+        <!-- End Navbar Links -->
+        <div
+          class="collapse navbar-collapse hamburgeritems enddiv order-3"
+          style="margin-left: 15%"
+        >
           <ul class="navbar-nav end-links">
             <li class="nav-item">
-              <a class="nav-link" href="../Html-files/login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../Html-files/signup.html"><i class="fa-solid fa-user"></i> Sign-Up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../Html-files/cart.html">
-                Cart
-                <i class="fa-solid fa-cart-shopping"></i>
+              <a
+                class="nav-link"
+                href="Html-files/cart.html"
+                style="color: black"
+              >
+                Cart <i class="fa-solid fa-cart-shopping"></i>
               </a>
-                </li>
-                </ul>
-            </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="Html-files/login.html"
+                style="color: black"
+              >
+                Login
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="Html-files/signup.html"
+                style="color: black"
+              >
+                Sign-Up
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
 
