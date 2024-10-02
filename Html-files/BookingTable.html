@@ -134,6 +134,26 @@
           max-width: 600px;
         }
       }
+      .bg-dark {
+        background-color: #343a40 !important;
+      }
+
+      .card {
+        border-radius: 10px;
+      }
+
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .card-title {
+        font-weight: 600;
+      }
+
+      .card-text {
+        font-size: 14px;
+      }
     </style>
   </head>
 
@@ -151,7 +171,7 @@
         document.getElementById("progressBar").style.width = scrolled + "%";
       };
     </script>
-    <!-- end -->
+
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <!-- Brand Logo -->
@@ -249,46 +269,129 @@
       </div>
     </nav>
 
-    <!-- </header> -->
-    <div class="head_container">
-      <div class="mainhead">
-        <h1 class="m-0">OUR MENU</h1>
-      </div>
-    </div>
+    <!-- end -->
 
-    <section class="filter_container">
-      <div class="filters">
-        <label for="filter-price">Price Range:</label>
-        <select id="filter-price">
-          <option value="all">All</option>
-          <option value="0-5">0 - 50$</option>
-          <option value="5-10">50$- 100$</option>
-          <option value="10-15">100$ - 1.000$</option>
-        </select>
-
-        <button onclick="">Apply Filters</button>
-      </div>
-    </section>
-
-    <section class="menu-container py-5">
-      <div class="container-fluid">
-        <div class="row g-2">
-          <div class="col-12 col-sm-6 col-md-3 col-xl-1 mx-auto">
-            <div
-              class="nav flex-column nav-pills"
-              id="v-pills-tab"
-              role="tablist"
-              aria-orientation="vertical"
-            ></div>
+    <div class="container text-center">
+      <h1 class="mt-4 mb-4">Movie Theater Seating</h1>
+      <div class="seating-grid">
+        <div class="row">
+          <div class="seat" data-row="1" data-seat="1">
+            <img src="/Images/table/table.png" />
           </div>
-          <div class="col-12 col-md-9">
-            <div class="menu-items">
-              <div class="tab-content" id="pills-tabContent"></div>
-            </div>
+          <div class="seat" data-row="1" data-seat="2">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="3">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="4">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="5">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="6">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="7">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="8">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="9">
+            <img src="/Images/table/table.png" />
+          </div>
+          <div class="seat" data-row="1" data-seat="10">
+            <img src="/Images/table/table.png" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 bg-dark text-white rounded">
+          <h4 class="mb-4 text-center">Booking table</h4>
+          <form>
+            <div class="row">
+              <div class="col-3 mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" id="date" class="form-control" />
+              </div>
+              <div class="col-3 mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="time" id="time" class="form-control" />
+              </div>
+              <div class="col-3 mb-3">
+                <label for="people" class="form-label">People</label>
+                <input
+                  type="number"
+                  id="people"
+                  class="form-control"
+                  value="6"
+                  min="1"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="table" class="form-label">Tables</label>
+              <select id="table" class="form-select">
+                <option>104</option>
+                <option>105</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                value="Henry Koss"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                class="form-control"
+                value="+44 123456789"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                value="h.koss@example.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="duration" class="form-label">Duration</label>
+              <input
+                type="number"
+                id="duration"
+                class="form-control"
+                value="2"
+                min="1"
+              />
+            </div>
+            <!-- <div class="mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select id="status" class="form-select">
+                <option>Accepted</option>
+                <option>Pending</option>
+                <option>Cancelled</option>
+              </select>
+            </div> -->
+            <button type="submit" class="btn btn-success">Booking</button>
+            <button type="button" class="btn btn-secondary">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- footer -->
     <footer>
