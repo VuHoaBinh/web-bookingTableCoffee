@@ -272,43 +272,12 @@
     <!-- end -->
 
     <div class="container text-center">
-      <h1 class="mt-4 mb-4">Movie Theater Seating</h1>
-      <div class="seating-grid">
-        <div class="row">
-          <div class="seat" data-row="1" data-seat="1">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="2">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="3">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="4">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="5">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="6">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="7">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="8">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="9">
-            <img src="/Images/table/table.png" />
-          </div>
-          <div class="seat" data-row="1" data-seat="10">
-            <img src="/Images/table/table.png" />
-          </div>
-        </div>
+      <h1 class="mt-4 mb-4">Table</h1>
+      <div class="container">
+        <div id="product-list"></div>
       </div>
     </div>
-
+    <!-- 
     <div class="container">
       <div class="row">
         <div class="col-lg-12 bg-dark text-white rounded">
@@ -378,21 +347,21 @@
                 min="1"
               />
             </div>
-            <!-- <div class="mb-3">
-              <label for="status" class="form-label">Status</label>
-              <select id="status" class="form-select">
-                <option>Accepted</option>
-                <option>Pending</option>
-                <option>Cancelled</option>
-              </select>
-            </div> -->
             <button type="submit" class="btn btn-success">Booking</button>
             <button type="button" class="btn btn-secondary">Cancel</button>
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <!-- <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <select id="status" class="form-select">
+        <option>Accepted</option>
+        <option>Pending</option>
+        <option>Cancelled</option>
+      </select>
+    </div> -->
     <!-- footer -->
     <footer>
       <div class="foot-panel1 w-100">
@@ -675,25 +644,6 @@
       });
     </script>
 
-    <div id="preloader">
-      <video autoplay muted loop id="preloader-video">
-        <source src="../loadiing.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <script>
-      window.addEventListener("load", function () {
-        const video = document.getElementById("preloader-video");
-        video.playbackRate = 1;
-
-        setTimeout(function () {
-          const preloader = document.getElementById("preloader");
-          preloader.style.opacity = "0";
-          setTimeout(function () {
-            preloader.style.display = "none";
-          }, 500);
-        }, 3000);
-      });
-    </script>
+    <script src="./BookingTable_Script.js" type="module"></script>
   </body>
 </html>
