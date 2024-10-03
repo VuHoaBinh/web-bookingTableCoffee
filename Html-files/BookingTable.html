@@ -290,6 +290,52 @@
       <div class="modal-dialog" id="modalInforBooking" role="document"></div>
     </div>
 
+    <div
+      class="modal fade"
+      id="QRmodal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="QRmodalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your QR</h5>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3 text-center">
+              <p style="color: red">
+                <i> (Let's save QR to check-in in coffee ) </i>
+              </p>
+              <img src="../Images/image_home/qr.png" alt="QR" id="qrImage" />
+              <br />
+              <button
+                id="downloadBtn"
+                class="btn btn-primary mt-3"
+                onclick="downloadQR()"
+              >
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                Download
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function downloadQR() {
+        const qrImage = document.getElementById("qrImage").src;
+        const link = document.createElement("a");
+        link.href = qrImage;
+        link.download = "../Images/image_home/qr.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+
     <!-- <div class="mb-3">
       <label for="status" class="form-label">Status</label>
       <select id="status" class="form-select">
@@ -510,29 +556,18 @@
         </div>
       </div>
     </footer>
-    <button
-      id="scroll-top-button"
-      class="scroll-top-button"
-      onclick="goToTop()"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24px"
-        viewBox="0 -960 960 960"
-        width="24px"
-        fill="white"
-        class="arrow"
-      >
-        <path
-          d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"
-        />
-      </svg>
-    </button>
 
-    <script>
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
-    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+    ></script>
 
     <script src="./MenuAPI.js"></script>
     <script src="menuStars.js"></script>
