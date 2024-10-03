@@ -271,88 +271,24 @@
 
     <!-- end -->
 
-    <div class="container text-center">
+    <div class="container text-center pt-5">
       <h1 class="mt-4 mb-4">Table</h1>
       <div class="container">
         <div id="product-list"></div>
       </div>
     </div>
-    <!-- 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 bg-dark text-white rounded">
-          <h4 class="mb-4 text-center">Booking table</h4>
-          <form>
-            <div class="row">
-              <div class="col-3 mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" id="date" class="form-control" />
-              </div>
-              <div class="col-3 mb-3">
-                <label for="time" class="form-label">Time</label>
-                <input type="time" id="time" class="form-control" />
-              </div>
-              <div class="col-3 mb-3">
-                <label for="people" class="form-label">People</label>
-                <input
-                  type="number"
-                  id="people"
-                  class="form-control"
-                  value="6"
-                  min="1"
-                />
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="table" class="form-label">Tables</label>
-              <select id="table" class="form-select">
-                <option>104</option>
-                <option>105</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input
-                type="text"
-                id="name"
-                class="form-control"
-                value="Henry Koss"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                class="form-control"
-                value="+44 123456789"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                value="h.koss@example.com"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="duration" class="form-label">Duration</label>
-              <input
-                type="number"
-                id="duration"
-                class="form-control"
-                value="2"
-                min="1"
-              />
-            </div>
-            <button type="submit" class="btn btn-success">Booking</button>
-            <button type="button" class="btn btn-secondary">Cancel</button>
-          </form>
-        </div>
-      </div>
-    </div> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" id="modalInforBooking" role="document"></div>
+    </div>
 
     <!-- <div class="mb-3">
       <label for="status" class="form-label">Status</label>
@@ -574,7 +510,6 @@
         </div>
       </div>
     </footer>
-
     <button
       id="scroll-top-button"
       class="scroll-top-button"

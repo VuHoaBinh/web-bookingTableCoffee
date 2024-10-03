@@ -13,26 +13,30 @@ let categories = [
 function renderPillsAndTabs() {
   let pillsDiv = document.getElementById("v-pills-tab");
   let tabsDiv = document.getElementById("pills-tabContent");
-  if (categories.length == 0)
+
+  if (categories.length === 0) {
     menuContainer.innerHTML = `MENU WILL BE UPDATED SOON`;
+    return; // Exit if there are no categories
+  }
 
   let firstCuisine = categories[0];
   pillsDiv.innerHTML += `<button class="nav-link active" id="v-pills-${firstCuisine}-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-${firstCuisine}" type="button" role="tab" aria-controls="v-pills-${firstCuisine}"
                             aria-selected="true">${firstCuisine}</button>`;
   tabsDiv.innerHTML += `<div class="tab-pane fade show active" id="v-pills-${firstCuisine}" role="tabpanel"
-                                aria-labelledby="pills-${firstCuisine}-tab" tabindex="0"></div>`;
+                                aria-labelledby="v-pills-${firstCuisine}-tab" tabindex="0"></div>`;
 
   for (let i = 1; i < categories.length; i++) {
-    pillsDiv.innerHTML += `<button class="nav-link" id="v-pills-${categories[i]}-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-${categories[i]}" type="button" role="tab" aria-controls="v-pills-${categories[i]}"
-                            aria-selected="true">${categories[i]}</button>`;
-    tabsDiv.innerHTML += `<div class="tab-pane fade" id="v-pills-${categories[i]}" role="tabpanel"
-                                aria-labelledby="pills-${categories[i]}-tab" tabindex="0"></div>`;
+    let category = categories[i];
+    pillsDiv.innerHTML += `<button class="nav-link" id="v-pills-${category}-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-${category}" type="button" role="tab" aria-controls="v-pills-${category}"
+                            aria-selected="false">${category}</button>`;
+    tabsDiv.innerHTML += `<div class="tab-pane fade" id="v-pills-${category}" role="tabpanel"
+                                aria-labelledby="v-pills-${category}-tab" tabindex="0"></div>`;
   }
 }
 
-renderPillsAndTabs();
+window.renderPillsAndTabs = renderPillsAndTabs;
 
 // Function to get meals by category
 async function getMealsByCategory(category) {
