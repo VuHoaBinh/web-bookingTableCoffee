@@ -1,16 +1,31 @@
-const result = await axios.get(
-  "https://66fe4ef72b9aac9c997b49c7.mockapi.io/tables"
-);
-console.log(result);
+import data from "./data.js";
 
-let flagNumber = -1;
+const selectedTables = new Set();
+
+function addToCart(productId) {
+  for (let i = 0; i < data.length; i++) {
+    const product = data[i].find((item) => item.id_table === productId);
+    if (product) {
+      product.pic = "../Images/table/redTable.png";
+      // cart.push(product);
+      // localStorage.setItem("cart", JSON.stringify(cart));
+      // document.getElementById("product-count").innerHTML = cart.length;
+      // renderCart(cart);
+
+      selectedTables.add(productId);
+      renderTables();
+      console.log(product.pic);
+    }
+  }
+}
+
+window.addToCart = addToCart;
 
 // Function to show QR booking modal
 function QRbooking(id_table) {
-  flagNumber = id_table;
   const modal = new bootstrap.Modal(document.getElementById("QRmodal"));
   modal.show();
-
+  addToCart(id_table);
   const currentModal = bootstrap.Modal.getInstance(
     document.getElementById("exampleModal")
   );
@@ -23,6 +38,13 @@ window.QRbooking = QRbooking;
 function populateModal(table_id) {
   let htmlShowInforBooking = "";
 
+  const currentDate = new Date();
+  const formattedDate = currentDate.toISOString().split("T")[0];
+
+  const hours = currentDate.getHours().toString().padStart(2, "0");
+  const minutes = currentDate.getMinutes().toString().padStart(2, "0");
+  const formattedTime = `${hours}:${minutes}`;
+
   htmlShowInforBooking += `
   <div class="modal-content">
     <div class="modal-header">
@@ -33,11 +55,11 @@ function populateModal(table_id) {
         <div class="row">
           <div class="col-5 mb-3">
             <label for="date" class="form-label">Date</label>
-            <input type="date" id="date" class="form-control" />
+            <input type="date" id="date" class="form-control" value="${formattedDate}" disabled/>
           </div>
           <div class="col-4 mb-3">
             <label for="time" class="form-label">Check-in-time</label>
-            <input type="time" id="time" class="form-control" />
+            <input type="time" id="time" class="form-control" value="${formattedTime}" disabled/>
           </div>
           <div class="col-3 mb-3">
             <label for="people" class="form-label">People</label>
@@ -46,7 +68,7 @@ function populateModal(table_id) {
         </div>
         <div class="mb-3">
           <label for="table" class="form-label">Tables</label>
-          <select id="table" class="form-select">
+          <select id="table" class="form-select" disabled>
             <option value="${table_id}" disabled selected>Table: ${table_id}</option>
           </select>
         </div>
@@ -88,25 +110,36 @@ function onClickModal(table_id) {
 
 window.onClickModal = onClickModal;
 
-// Dynamically create table items
-let htmlString = "";
-let count = 0;
+// render data from data.js
+function renderTables() {
+  let htmlString = "";
 
-for (let i = 0; i < 5; i++) {
-  htmlString += '<div class="row">';
-  for (let j = 0; j < 10; j++) {
-    count++;
-    htmlString += `
-    <div class="col">
-      <p style="margin: -19%; padding-left: 28%;">${count}</p>
-      <img
-        onClick="onClickModal(${count})"
-        src="/Images/table/table.png"
-        style="width: 80%; border: 3px solid black; padding: 12px; border-radius: 32%; margin: 25%;"
-      />
-    </div>`;
-  }
-  htmlString += "</div>";
+  data.forEach((row) => {
+    htmlString += '<div class="row mb-3">';
+
+    row.forEach((table) => {
+      const isSelected = selectedTables.has(table.id_table);
+      htmlString += ` 
+        <div class="col text-center"> 
+          <p style="margin-left: -50%; margin-bottom: 3%;">Table ${
+            table.id_table
+          }</p>
+          <img
+            onClick="${isSelected ? "" : `onClickModal(${table.id_table})`}"
+            src="${table.pic}"
+            alt="Table ${table.id_table}"
+            class="img-fluid ${
+              table.pic.includes("redTable") ? "highlight" : ""
+            }" 
+            style="width: 50%; border: 2px solid black; border-radius: 32%;"
+            title="${isSelected ? "Booked table" : "Empty table"}" 
+          />
+        </div>`;
+    });
+    htmlString += "</div>";
+  });
+
+  document.getElementById("product-list").innerHTML = htmlString;
 }
 
-document.getElementById("product-list").innerHTML = htmlString;
+document.addEventListener("DOMContentLoaded", renderTables);

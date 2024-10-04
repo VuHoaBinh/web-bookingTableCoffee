@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu - Food Ordering Website</title>
+    <title>Booking table</title>
     <link
       rel="shortcut icon"
       href="https://pnghq.com/wp-content/uploads/foodie-logo-png-clear-background-768x275.png"
@@ -192,7 +192,7 @@
           <ul class="navbar-nav center-links">
             <li class="nav-item">
               <a
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
                 href="/index.html"
                 style="color: black"
@@ -202,8 +202,8 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link"
-                href="Html-files/menu.html"
+                class="nav-link active"
+                href="./BookingTable.html"
                 style="color: black"
               >
                 <i class="fa-solid fa-table"></i> Tables
@@ -213,7 +213,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="Html-files/offers.html"
+                href="../Html-files/offers.html"
                 style="color: black"
               >
                 <i class="fa-solid fa-ticket"></i> Vouchers
@@ -222,7 +222,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="Html-files/contact.html"
+                href="../Html-files/contact.html"
                 style="color: black"
               >
                 <i class="fa-solid fa-phone"></i> Contact Us
@@ -306,7 +306,7 @@
           <div class="modal-body">
             <div class="mb-3 text-center">
               <p style="color: red">
-                <i> (Let's save QR to check-in in coffee ) </i>
+                <i> (Let's save QR to check-in at coffee ) </i>
               </p>
               <img src="../Images/image_home/qr.png" alt="QR" id="qrImage" />
               <br />
@@ -345,218 +345,112 @@
       </select>
     </div> -->
     <!-- footer -->
-    <footer>
-      <div class="foot-panel1 w-100">
-        <div class="container-fluid py-5 px-0">
-          <div class="row justify-content-evenly gy-5">
-            <div class="col-6 col-sm-3 col-md-2 col-xl-2">
-              <h5 class="mb-3" style="margin-left: 70px">See Also</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./Html-files/menu.html">Menu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./Html-files/services.html"
-                    >Services</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./Html-files/contact.html"
-                    >Contact us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./Html-files/cart.html">Cart</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="/Html-files/contributor.html"
-                    >Our Contributors</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-sm-5 col-md-3 col-xl-3">
-              <h5 class="mb-3" style="margin-left: 90px">Exclusive Offers</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">ThuD coffee Discounts</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Limited-Time Promotions</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Special Event Booking</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    href="/Html-files/offers/membership-benifits.html"
-                    >Membership Benefits</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Early Access to New Recipes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">VIP ThuD Events</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    href="/Html-files/offers/culinary-experience.html"
-                    >Personalized Culinary Experiences</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-4 col-xl-3">
-              <h5 class="mb-3" style="margin-left: 70px">Payment Products</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a href="" class="nav-link">Secure Checkout</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Credit/Debit Cards</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Secure Checkout</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Online Payment</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Mobile Wallets</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link">Contactless Payments</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-md-3 col-xl-4">
-              <form
-                id="contactForm"
-                action="https://formsubmit.co/xyz@gmail.com"
-                method="POST"
-              >
-                <h3 class="text-center mb-3">Contact Us!</h3>
-                <input
-                  type="email"
-                  id="footer-email"
-                  name="email"
-                  placeholder="Your Email"
-                  class="text-center form-control mb-2"
-                  required
+    <div id="contact">
+      <footer
+        class="text-black text-center text-lg-start"
+        style="background-color: rgb(217, 219, 221)"
+      >
+        <div class="container p-4">
+          <div class="row mt-4">
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">
+                My Coffee
+                <img
+                  alt="myphoto"
+                  src="/Images/logo/Foodielogo.png"
+                  style="
+                    width: 50%;
+                    height: 50%;
+                    margin-left: 10%;
+                    margin-top: -10%;
+                    margin-bottom: -10%;
+                  "
                 />
-                <textarea
-                  id="footer-message"
-                  name="footer-message"
-                  placeholder="Your Message"
-                  class="text-center form-control mb-2"
-                  required
-                ></textarea>
-                <div class="d-grid gap-2 col-12">
-                  <button type="submit" class="btn btn-danger">
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              </h5>
+
+              <p>
+                Welcome to ThuD Coffee, where every cup is a celebration of rich
+                flavors and exceptional quality. Our coffee beans are carefully
+                sourced from the finest plantations, ensuring that each sip
+                delivers a unique taste experience. At ThuD Coffee, we are
+                committed to sustainability and supporting local farmers, which
+                allows us to bring you not only great coffee but also a positive
+                impact on the community. Whether you're seeking a cozy spot to
+                relax or a quick caffeine fix, we invite you to enjoy the warmth
+                and vibrancy of our café.
+              </p>
+
+              <div class="mt-4">
+                <a type="button" class="btn btn-floating btn-lg"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a type="button" class="btn btn-floating btn-lg"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a type="button" class="btn btn-floating btn-lg"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a type="button" class="btn btn-floating btn-lg"
+                  ><i class="fab fa-google-plus-g"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4 pb-1">Contact with us</h5>
+
+              <ul class="fa-ul" style="margin-left: 1.65em">
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-home"></i></span
+                  ><span class="ms-2">Ho Chi Minh, Viet Nam</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-envelope"></i></span
+                  ><span class="ms-2">thudcoffee.booking@thud.com</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-phone"></i></span
+                  ><span class="ms-2">+123-456-789</span>
+                </li>
+                <li class="mb-3">
+                  <span class="fa-li"><i class="fas fa-print"></i></span
+                  ><span class="ms-2">+123-456-789</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+              <table class="table text-center text-white">
+                <tbody class="font-weight-normal">
+                  <tr>
+                    <td>Mon - Thu:</td>
+                    <td>8am - 9pm</td>
+                  </tr>
+                  <tr>
+                    <td>Fri - Sat:</td>
+                    <td>8am - 1am</td>
+                  </tr>
+                  <tr>
+                    <td>Sunday:</td>
+                    <td>9am - 10pm</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="foot-panel2">
-        <div class="media-handles pt-3 pb-2">
-          <h4>Follow Us</h4>
-          <div class="social-icons">
-            <a
-              class="fa-brands fa-facebook"
-              href="https://facebook.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-instagram"
-              href="https://instagram.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-x-twitter"
-              href="https://twitter.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-snapchat"
-              href="https://snapchat.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-youtube"
-              href="https://youtube.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-linkedin"
-              href="https://linkedin.com"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-github"
-              href="https://github.com/khushi-joshi-05/Food-ordering-website"
-              target="_blank"
-            ></a>
-            <a
-              class="fa-brands fa-discord"
-              href="https://discord.com/invite/sybYafYA"
-              target="_blank"
-            ></a>
-          </div>
-          <p class="text">
-            Stay connected with us on social media for the latest updates,
-            recipes, and foodie adventures.
-          </p>
-          <div>
-            Give your valuable
-            <a href="/Html-files/feedback.html"><b>feedback!</b></a>
-          </div>
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © 2024 Copyright:
+          <a class="text-black" style="text-decoration: none" href="#"
+            >www.thudcoffee.bookintable.com
+          </a>
         </div>
-        <div class="copyright py-1">
-          &copy;
-          <span id="copyright-year"></span> Foodies - All Rights Reserved |
-          <span id="terms"></span>
-
-          <a href="/Html-files/terms.html" class="legal-pages"
-            >Terms and Conditions</a
-          >
-          |
-          <span id="privacy"></span>
-          <a href="/Html-files/privacy.html" class="legal-pages"
-            >Privacy Policy</a
-          >
-          |
-
-          <span id="Licensing"></span>
-          <a href="/Html-files/Licensing.html" class="legal-pages">Licensing</a>
-          |
-
-          <span id="author">
-            <a
-              href="https://www.linkedin.com/in/khushi-joshi-95a587256/"
-              target="_blank"
-              class="legal-pages"
-              >Khushi Joshi</a
-            >
-          </span>
-        </div>
-      </div>
-    </footer>
-
+      </footer>
+    </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
       integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
@@ -569,9 +463,9 @@
       src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
     ></script>
 
-    <script src="./MenuAPI.js"></script>
-    <script src="menuStars.js"></script>
-    <script src="navbar.js"></script>
+    <!-- <script src="./MenuAPI.js"></script> -->
+    <!-- <script src="menuStars.js"></script> -->
+    <!-- <script src="navbar.js"></script> -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
@@ -580,8 +474,8 @@
         once: false,
       });
     </script>
-    <script src="../carts.js"></script>
-    <script src="cart.js"></script>
+    <!-- <script src="../carts.js"></script> -->
+    <!-- <script src="cart.js"></script> -->
 
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script>

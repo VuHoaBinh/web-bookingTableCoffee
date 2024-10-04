@@ -300,3 +300,19 @@ ul {
     display: inline !important;
   }
 }
+
+#product-list img {
+  transition: transform 0.3s;
+}
+
+#product-list img:hover {
+  transform: scale(1.05);
+}
+
+#product-list .col {
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background-color: #fe0000;
+}
