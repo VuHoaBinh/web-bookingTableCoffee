@@ -1,3 +1,8 @@
+import { Firebase } from "./class/firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+
+const firebase = new Firebase();
+
 document.getElementById("copyright-year").textContent =
   new Date().getFullYear();
 
