@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Booking table</title>
+    <title>Booking table - ThuD Coffee</title>
     <link
       rel="shortcut icon"
-      href="https://pnghq.com/wp-content/uploads/foodie-logo-png-clear-background-768x275.png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0TdGFITxCGe8cekepTIMS-sIq_TzGIXcPFA&s"
       type="image/x-icon"
     />
 
@@ -175,7 +175,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
         <!-- Brand Logo -->
-        <a href="index.html">
+        <a href="../index.html">
           <img
             id="theme-toggle-logo"
             style="height: 90px; width: 100px"
@@ -211,12 +211,8 @@
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="../Html-files/offers.html"
-                style="color: black"
-              >
-                <i class="fa-solid fa-ticket"></i> Vouchers
+              <a class="nav-link" href="#contact" style="color: black">
+                <i class="fa-solid fa-ticket"></i> About
               </a>
             </li>
             <li class="nav-item">
@@ -237,34 +233,18 @@
           style="margin-left: 15%"
         >
           <ul class="navbar-nav end-links">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="../Html-files/cart.html"
-                style="color: black"
-              >
+            <li class="nav-item position-relative">
+              <a class="nav-link" href="./cart.html" style="color: black">
                 Cart <i class="fa-solid fa-cart-shopping"></i>
               </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="Html-files/login.html"
-                style="color: black"
+              <span
+                id="product-count"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >0</span
               >
-                Login
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="Html-files/signup.html"
-                style="color: black"
-              >
-                Sign-Up
-              </a>
             </li>
           </ul>
+          <div class="text-end" id="user-actions"></div>
         </div>
       </div>
     </nav>
@@ -509,5 +489,6 @@
     </script>
 
     <script src="./BookingTable_Script.js" type="module"></script>
+    <script src="../contact-form.js" type="module"></script>
   </body>
 </html>

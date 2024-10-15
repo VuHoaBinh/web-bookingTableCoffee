@@ -138,9 +138,9 @@
           <div class="card text-center mx-auto">
             <form id="signup-form">
               <div class="card-body">
-                <h1 class="title">SIGN UP</h1>
+                <h1 class="title">SIGN UP - thudcoffee</h1>
                 <div class="textfield">
-                  <label for="signup-name">Name</label>
+                  <label for="signup-name">Username</label>
                   <input
                     type="text"
                     id="signup-name"
@@ -160,22 +160,25 @@
                   />
                 </div>
                 <div class="textfield">
-                  <label for="signup-username">Username</label>
-                  <input
-                    type="text"
-                    id="signup-username"
-                    name="Username"
-                    placeholder="Enter Username"
-                    required
-                  />
-                </div>
-                <div class="textfield">
                   <label for="signup-password">Password</label>
                   <input
                     type="password"
                     id="signup-password"
                     name="password"
                     placeholder="Enter Password"
+                    required
+                  />
+                  <span id="signup-hide">
+                    <i class="hide-icon bx bxs-hide"></i>
+                  </span>
+                </div>
+                <div class="textfield">
+                  <label for="signup-password-confirm">Password Confirm</label>
+                  <input
+                    type="password"
+                    id="signup-password-confirm"
+                    name="password-confirm"
+                    placeholder="Confirm Password"
                     required
                   />
                   <span id="signup-hide">
@@ -309,98 +312,25 @@
       </footer>
     </div>
 
-    <script>
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
-    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="navbar.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        easing: "ease",
-        once: false,
-      });
-    </script>
-    <script>
-      // Your web app's Firebase configuration
-
-      // const firebaseConfig = {
-      // 	//Add your Config File
-      // };
-
-      // // Initialize Firebase
-      // firebase.initializeApp(firebaseConfig);
-      // const auth = firebase.auth();
-      // const db = firebase.database();
-    </script>
-    <script>
-      // Toggle password visibility
-      const pswinput = document.getElementById("password");
-      const toggle = document.getElementById("signup-hide");
-      toggle.addEventListener("click", function () {
-        const pswfield = this.querySelector("i");
-        if (pswinput.getAttribute("type") == "password") {
-          pswinput.setAttribute("type", "text");
-          pswfield.classList.replace("bxs-hide", "bxs-show");
-        } else {
-          pswinput.setAttribute("type", "password");
-          pswfield.classList.replace("bxs-show", "bxs-hide");
-        }
-      });
-
-      // Sign up with email and password
-      // document.getElementById('signup-form').addEventListener('submit', (e) => {
-      // 	e.preventDefault();
-
-      // 	const name = document.getElementById('signup-name').value;
-      // 	const email = document.getElementById('signup-email').value;
-      // 	const username = document.getElementById('signup-username').value;
-      // 	const password = document.getElementById('signup-password').value;
-
-      // 	auth.createUserWithEmailAndPassword(email, password)
-      // 		.then((userCredential) => {
-      // 			const user = userCredential.user;
-
-      // 			// Save user info to Realtime Database
-      // 			return db.ref('users/' + user.uid).set({
-      // 				name: name,
-      // 				username: username,
-      // 				email: email,
-      // 				password: password
-      // 			});
-      // 		})
-      // 		.then(() => {
-      // 			alert('User registered successfully!');
-      // 			window.location.href = '../index.html'; // Redirect to homepage or login page
-      // 		})
-      // 		.catch((error) => {
-      // 			console.error('Error signing up:', error);
-      // 			alert(error.message);
-      // 		});
-      // });
-      document.addEventListener("DOMContentLoaded", function () {
-        const togglePasswordVisibility = (inputId, toggleId) => {
-          const passwordInput = document.getElementById(inputId);
-          const toggleIcon = document.getElementById(toggleId);
-          const icon = toggleIcon.querySelector("i");
-
-          toggleIcon.addEventListener("click", function () {
-            if (passwordInput.type === "password") {
-              passwordInput.type = "text";
-              icon.classList.remove("bxs-hide");
-              icon.classList.add("bxs-show"); // Change the icon class as needed
-            } else {
-              passwordInput.type = "password";
-              icon.classList.remove("bxs-show");
-              icon.classList.add("bxs-hide"); // Change the icon class as needed
-            }
-          });
-        };
-        togglePasswordVisibility("signup-password", "signup-hide");
-      });
-    </script>
+    <script src="../signup.js" type="module"></script>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
       AOS.init({
         duration: 1000,

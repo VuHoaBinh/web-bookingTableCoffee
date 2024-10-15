@@ -10,12 +10,13 @@ import {
 export class Firebase {
   constructor() {
     this.firebaseConfig = {
-      apiKey: "AIzaSyCsmc_Bzob_MMEHYEfvU-FhZzP-NaPBOhY",
-      authDomain: "final-project-jsi09.firebaseapp.com",
-      projectId: "final-project-jsi09",
-      storageBucket: "final-project-jsi09.appspot.com",
-      messagingSenderId: "1650737987",
-      appId: "1:1650737987:web:66c054fb2c585c072b25f6",
+      apiKey: "AIzaSyCV86ra9pM3LFir0-ICzFL_tEpBbhl2_Rc",
+      authDomain: "todayfriday-d1f37.firebaseapp.com",
+      projectId: "todayfriday-d1f37",
+      storageBucket: "todayfriday-d1f37.appspot.com",
+      messagingSenderId: "40416185860",
+      appId: "1:40416185860:web:0a847bcd2ec1e9dd836f51",
+      measurementId: "G-2MFQGL4LWT",
     };
 
     this.app = initializeApp(this.firebaseConfig);
