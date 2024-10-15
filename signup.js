@@ -2,21 +2,23 @@ import { Firebase } from "./class/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 const firebase = new Firebase();
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function handleAuthStateChanged(user) {
   if (user) {
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   } else {
-    document.body.style.background =
-      "linear-gradient(to bottom, #0f0c29, #302b63, #24243e)";
-    document.body.style.opacity = 1;
-
     async function signUp(e) {
       e.preventDefault();
 
-      const displayName = document.getElementById("displayName").value;
-      const email = document.getElementById("emailSignUp").value;
-      const password = document.getElementById("passwordSignUp").value;
-      console.log(displayName, email, password);
+      const displayName = document.getElementById("signup-name").value;
+      const email = document.getElementById("signup-email").value;
+      const password = document.getElementById("signup-password").value;
+      const passwordConfirm = document.getElementById(
+        "signup-password-confirm"
+      ).value;
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
@@ -27,30 +29,45 @@ function handleAuthStateChanged(user) {
         });
         return;
       }
+
+      if (password !== passwordConfirm) {
+        Swal.fire({
+          title: "Đăng kí thất bại",
+          text: "Passwords do not match.",
+          icon: "error",
+        });
+        return;
+      }
+
+      const signUpButton = document.querySelector(".btn-login[type='submit']");
+      signUpButton.disabled = true;
+
       try {
         const result = await firebase.register(email, password);
+        await firebase.update(displayName);
+        await sleep(2000);
+
         Swal.fire({
           title: "Đăng kí thành công",
           text: "Welcome to my website",
           icon: "success",
         });
-
-        // Update the user's display name
-        await firebase.update(displayName);
-
-        const user = result.user;
-        console.log(user);
+        console.log(result);
+        // window.location.href = "../index.html";
       } catch (error) {
+        await sleep(2000);
         Swal.fire({
           title: "Đăng kí thất bại",
-          text: error.message,
+          text: error.message || "Something went wrong.",
           icon: "error",
         });
-        console.log(error);
+        console.error(error);
+      } finally {
+        signUpButton.disabled = false;
       }
     }
 
-    document.getElementById("sign-up-form").addEventListener("submit", signUp);
+    document.getElementById("signup-form").addEventListener("submit", signUp);
   }
 }
 onAuthStateChanged(firebase.auth, handleAuthStateChanged);

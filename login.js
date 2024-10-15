@@ -1,27 +1,22 @@
 import { Firebase } from "./class/firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 const firebase = new Firebase();
-// bat duoc su kien khi nguoi dung submit form
-// lay du lieu nguoi dung nhap vao
-// gui len firebase de dang nhap
-// neu dang nhap thanh cong thi chuyen huong ve trang chu,....
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 function handleAuthStateChanged(user) {
   if (user) {
     console.log("User is signed in.", user.displayName);
-    // block user navigate to this page
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   } else {
-    document.body.style.opacity = 1;
-
     async function signIn(e) {
-      // chan su kien load trang
       e.preventDefault();
 
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
 
-      // validation: kiem tra du lieu co hop le hay khong
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
         Swal.fire({
@@ -34,6 +29,7 @@ function handleAuthStateChanged(user) {
 
       try {
         const result = await firebase.login(email, password);
+        await sleep(2000);
         Swal.fire({
           title: "Đăng kí thành công",
           text: "Welcome to my website",
@@ -42,6 +38,7 @@ function handleAuthStateChanged(user) {
         const user = result.user;
         console.log(user);
       } catch (error) {
+        await sleep(2000);
         Swal.fire({
           title: "Đăng kí thất bại",
           text: error.message,
@@ -51,7 +48,7 @@ function handleAuthStateChanged(user) {
       }
     }
 
-    document.getElementById("sign-in-form").addEventListener("submit", signIn);
+    document.getElementById("login-form").addEventListener("submit", signIn);
   }
 }
 

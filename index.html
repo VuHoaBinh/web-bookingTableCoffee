@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Home - ThuD Coffee</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -22,7 +22,7 @@
     <!-- Adding favicon image -->
     <link
       rel="shortcut icon"
-      href="Images/logo/Foodielogo.png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0TdGFITxCGe8cekepTIMS-sIq_TzGIXcPFA&s"
       type="image/x-icon"
     />
     <link
@@ -63,7 +63,7 @@
 
     <link rel="stylesheet" href="Css-files/mode-toggler.css" />
     <link rel="stylesheet" href="./style.css" />
-
+    <script src="./Html-files/BookingTable_Script.js" type="module"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
       .legal-pages {
@@ -166,14 +166,9 @@
                 <i class="fa-solid fa-table"></i> Tables
               </a>
             </li>
-
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./Html-files/offers.html"
-                style="color: black"
-              >
-                <i class="fa-solid fa-ticket"></i> Vouchers
+              <a class="nav-link" href="#contact" style="color: black">
+                <i class="fa-solid fa-ticket"></i> About
               </a>
             </li>
             <li class="nav-item">
@@ -194,7 +189,7 @@
           style="margin-left: 15%"
         >
           <ul class="navbar-nav end-links">
-            <li class="nav-item">
+            <li class="nav-item position-relative">
               <a
                 class="nav-link"
                 href="./Html-files/cart.html"
@@ -202,26 +197,14 @@
               >
                 Cart <i class="fa-solid fa-cart-shopping"></i>
               </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="Html-files/login.html"
-                style="color: black"
+              <span
+                id="product-count"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                >0</span
               >
-                Login
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="Html-files/signup.html"
-                style="color: black"
-              >
-                Sign-Up
-              </a>
             </li>
           </ul>
+          <div class="text-end" id="user-actions"></div>
         </div>
       </div>
     </nav>
@@ -673,7 +656,11 @@
             data-aos-offset="170"
             data-aos-easing="ease-in-out"
           >
-            <img src="/icons/dining-table.png" alt="" class="service-icon" />
+            <img
+              src="data:image/png;base64,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"
+              alt=""
+              class="service-icon"
+            />
             <h1>
               Coffee<br />
               Drink
@@ -1112,7 +1099,7 @@
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
     <script src="Html-files/navbar.js"></script>
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script>
@@ -1125,7 +1112,7 @@
       // Chatbot
       window.botpressWebChat.init({
         composerPlaceholder: "Message...",
-        botConversationDescription: "Welcome to Foodie!",
+        botConversationDescription: "Welcome to ThuD Coffee!",
         botId: "2093cb3a-9343-4dec-a60f-2f69a5948cac",
         hostUrl: "https://cdn.botpress.cloud/webchat/v1",
         messagingUrl: "https://messaging.botpress.cloud",
@@ -1133,7 +1120,7 @@
         webhookId: "7bd6ccb8-58f4-4ee3-9bca-f33ea4b7c37c",
         lazySocket: true,
         themeName: "prism",
-        botName: "Foodie",
+        botName: "ThuD Coffee",
         stylesheet:
           "https://webchat-styler-css.botpress.app/prod/code/da4ab5f7-146c-4585-961b-2d9def26af50/v96339/style.css",
         frontendVersion: "v1",
